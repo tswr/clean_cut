@@ -16,7 +16,7 @@ def get_neighbours(i, j, max_i, max_j):
 		result.append((i, j - 1))
 	if (i + 1) < max_i:
 		result.append((i + 1, j))		
-	if (j + 1) < max_i:
+	if (j + 1) < max_j:
 		result.append((i, j  + 1))
 
 	return result	
