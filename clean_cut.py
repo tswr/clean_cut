@@ -5,6 +5,30 @@ IMAGE = 'plane.jpg'
 T = [100, 120, 200]
 S = [120, 120, 120]
 
+def dist(x, y):
+	return sum((x - y) ** 2)
+
+def get_neighbours(i, j, max_i, max_j):
+	result = []
+	if i > 0:
+		result.append((i - 1, j))
+	if j > 0:
+		result.append((i, j - 1))
+	if (i + 1) < max_i:
+		result.append((i + 1, j))		
+	if (j + 1) < max_i:
+		result.append((i, j  + 1))
+
+	return result	
+
+def flip(i, j, A, B):
+	if (i, j) in A:
+		A.remove((i, j))
+		B.add((i, j))
+	else:
+		B.remove((i, j))
+		A.add((i, j))
+
 def cut(image):
 	dim_x, dim_y, colors = image.shape
 	A = set()
