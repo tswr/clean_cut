@@ -1,5 +1,4 @@
 from scipy import misc
-from tqdm import tqdm
 
 IMAGE = 'plane.jpg'
 
